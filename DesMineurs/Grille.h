@@ -7,6 +7,7 @@ class Grille
 {
 private:
     Case mesCases[4][4];
+    int taille;
 public:
     Grille();
     int numerateur();
