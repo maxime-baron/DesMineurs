@@ -13,8 +13,12 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        jeu.cpp
+        jeu.cpp \
+    Joueur.cpp \
+    UIgagne.cpp
 
-HEADERS  += jeu.h
+HEADERS  += jeu.h \
+    Joueur.h \
+    UIgagne.h
 
 FORMS    += jeu.ui
