@@ -1,0 +1,6 @@
+#include "Grille.h"
+#include "Demineur.h"
+
+Grille::Grille()
+{
+}
