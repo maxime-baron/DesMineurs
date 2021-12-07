@@ -1,5 +1,6 @@
 #include "Demineur.h"
 
-Demineur::Demineur()
+Demineur::Demineur():jeu()
 {
+
 }

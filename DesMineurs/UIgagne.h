@@ -5,11 +5,12 @@
 
 class UIgagne
 {
+
+private:
+    Jeu * monJeu;
 public:
     UIgagne();
     getUsername();
-private:
-    Jeu * monJeu;
 };
 
 #endif // UIGAGNE_H

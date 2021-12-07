@@ -6,11 +6,16 @@
 
 class Jeu
 {
-public:
-    Jeu();
+
 private:
     Joueur * monJoueur;
     UIgagne * gagne;
+    int topScore;
+public:
+
+    Jeu();
+    void win();
+    void lose();
 };
 
 #endif // JEU_H
