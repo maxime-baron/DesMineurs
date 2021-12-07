@@ -14,9 +14,15 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         Mainwindow.cpp \
-    Jeu.cpp
+    Jeu.cpp \
+    UIgagne.cpp \
+    Joueur.cpp \
+    Demineur.cpp
 
 HEADERS  += Mainwindow.h \
-    Jeu.h
+    Jeu.h \
+    Demineur.h \
+    Joueur.h \
+    UIgagne.h
 
 FORMS    += mainwindow.ui

@@ -1,0 +1,11 @@
+#ifndef UIGAGNE_H
+#define UIGAGNE_H
+
+class UIgagne
+{
+public:
+    UIgagne();
+    getUsername();
+};
+
+#endif // UIGAGNE_H

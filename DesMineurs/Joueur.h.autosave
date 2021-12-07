@@ -1,0 +1,15 @@
+#ifndef JOUEUR_H
+#define JOUEUR_H
+
+class Joueur
+{
+private: 
+    int a_score;
+    string a_username;
+public:
+    Joueur();
+    getScore();
+    setScore(int p_score);
+};
+
+#endif // JOUEUR_H
