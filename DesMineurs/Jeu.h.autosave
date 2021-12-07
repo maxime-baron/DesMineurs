@@ -8,9 +8,12 @@ class Jeu
 {
 public:
     Jeu();
+    void Jeu::win();
+    void Jeu::lose();
 private:
     Joueur * monJoueur;
     UIgagne * gagne;
+    int topS
 };
 
 #endif // JEU_H

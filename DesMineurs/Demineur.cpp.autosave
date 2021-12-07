@@ -1,5 +1,5 @@
 #include "Demineur.h"
 
-Demineur::Demineur():puclic Jeu(QWidget *parent)
+Demineur::Demineur():jeu()
 {
 }
