@@ -17,12 +17,16 @@ SOURCES += main.cpp\
     Jeu.cpp \
     UIgagne.cpp \
     Joueur.cpp \
-    Demineur.cpp
+    Demineur.cpp \
+    Grille.cpp \
+    Case.cpp
 
 HEADERS  += Mainwindow.h \
     Jeu.h \
     Demineur.h \
     Joueur.h \
-    UIgagne.h
+    UIgagne.h \
+    Grille.h \
+    Case.h
 
 FORMS    += mainwindow.ui
