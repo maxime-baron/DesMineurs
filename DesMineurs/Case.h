@@ -1,12 +1,13 @@
 #ifndef CASE_H
 #define CASE_H
 
-class Case
+class Case:
 {
 private:
     bool a_traped;
     bool a_flaged;
     bool a_clicked;
+
 protected:
     int a_valeur;
 public:
@@ -19,7 +20,6 @@ public:
     getFlaged();
     setClicked(bool p_clicked);
     getClicked();
-    dynamiteur();
 };
 
 #endif // CASE_H

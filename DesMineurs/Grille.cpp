@@ -1,5 +1,5 @@
 #include "Grille.h"
-
+#include <cstdlib>
 
 Grille::Grille()
 {
@@ -9,5 +9,16 @@ Grille::Grille()
         {
             Case *mesCases[i][y] = new Case();
         }
+    }
+}
+
+Grille::dynamiteur(int nbrBombe)
+{
+    for(int i=0;i<nbrBombe;i++)
+    {
+        int random1 = rand()%1-nbrBombe;
+        int random2 = rand()%1-nbrBombe;
+
+        mesCases[random1][random2].setTraped(true);
     }
 }

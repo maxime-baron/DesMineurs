@@ -11,6 +11,8 @@ private:
 public:
     Grille();
     int numerateur();
+    void dynamiteur(int nbrBombe);
+
 };
 
 #endif // GRILLE_H
