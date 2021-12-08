@@ -1,5 +1,6 @@
 #include "Grille.h"
 #include <cstdlib>
+#include <time.h>
 
 Grille::Grille()
 {
@@ -14,6 +15,7 @@ Grille::Grille()
 
 Grille::dynamiteur(int nbrBombe)
 {
+    srand(time(NULL));
     for(int i=0;i<nbrBombe;i++)
     {
         int random1 = rand()%1-nbrBombe;
