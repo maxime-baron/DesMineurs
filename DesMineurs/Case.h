@@ -1,13 +1,15 @@
 #ifndef CASE_H
 #define CASE_H
 
-class Case:
+#include <QPushButton>
+
+class Case:public QPushButton
 {
 private:
     bool a_traped;
     bool a_flaged;
     bool a_clicked;
-
+    QPushButton *btn;
 protected:
     int a_valeur;
 public:
