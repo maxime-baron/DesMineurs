@@ -1,6 +1,8 @@
 #include "Demineur.h"
 
-Demineur::Demineur():jeu()
+Demineur::Demineur()
 {
+    maGrille = new Grille(5);
+    int taille= maGrille->taille;
 
 }

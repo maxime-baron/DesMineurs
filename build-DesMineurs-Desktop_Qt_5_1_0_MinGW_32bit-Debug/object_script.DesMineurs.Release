@@ -1,0 +1,12 @@
+INPUT(
+./release\main.o
+./release\Mainwindow.o
+./release\Jeu.o
+./release\UIgagne.o
+./release\Joueur.o
+./release\Demineur.o
+./release\Grille.o
+./release\Case.o
+./release\moc_Mainwindow.o
+./release\moc_Jeu.o
+);

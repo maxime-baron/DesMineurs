@@ -1,21 +1,25 @@
 #ifndef JEU_H
 #define JEU_H
 
-#include"UIgagne.h"
-#include"Joueur.h"
+#include"Jeu.h"
+#include <QMainWindow>
 
-class Jeu
+namespace Ui {
+class Jeu;
+}
+
+class Jeu : public QMainWindow
 {
+    Q_OBJECT
 
-private:
-    Joueur * monJoueur;
-    UIgagne * gagne;
-    int topScore;
 public:
-
-    Jeu();
     void win();
     void lose();
-};
+    explicit Jeu(QWidget *parent = 0);
+    ~Jeu();
 
+private:
+    Ui::Jeu *ui;
+    int topScore;
+};
 #endif // JEU_H

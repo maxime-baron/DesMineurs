@@ -2,15 +2,18 @@
 #include <cstdlib>
 #include <time.h>
 
-Grille::Grille()
+Grille::Grille(int lgth):taille(lgth)
 {
     for(int i=0;i>taille;i++)
     {
         for(int y=0;y>taille;y++)
         {
-            Case *mesCases[i][y] = new Case();
+            QPushButton* unBouton = new QPushButton();
+            unBouton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+            this->addWidget(unBouton,i,y);
         }
     }
+
 }
 
 Grille::dynamiteur(int nbrBombe)

@@ -9,19 +9,18 @@ private:
     bool a_traped;
     bool a_flaged;
     bool a_clicked;
-    QPushButton *btn;
 protected:
     int a_valeur;
 public:
     Case();
-    setValeur(int p_valeur);
-    getValeur();
-    setTraped(bool p_traped);
-    getTraped();
-    setFlaged(bool p_flaged);
-    getFlaged();
-    setClicked(bool p_clicked);
-    getClicked();
+    void setValeur(int p_valeur);
+    int getValeur();
+    void setTraped(bool p_traped);
+    bool getTraped();
+    void setFlaged(bool p_flaged);
+    bool getFlaged();
+    void setClicked(bool p_clicked);
+    bool getClicked();
 };
 
 #endif // CASE_H

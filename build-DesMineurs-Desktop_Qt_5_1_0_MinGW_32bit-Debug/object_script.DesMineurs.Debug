@@ -1,0 +1,12 @@
+INPUT(
+./debug\main.o
+./debug\Mainwindow.o
+./debug\Jeu.o
+./debug\UIgagne.o
+./debug\Joueur.o
+./debug\Demineur.o
+./debug\Grille.o
+./debug\Case.o
+./debug\moc_Mainwindow.o
+./debug\moc_Jeu.o
+);

@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'mainwindow.ui'
+** Form generated from reading UI file 'jeu.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.1.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_MAINWINDOW_H
-#define UI_MAINWINDOW_H
+#ifndef UI_JEU_H
+#define UI_JEU_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -67,4 +67,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // UI_MAINWINDOW_H
+#endif // UI_JEU_H

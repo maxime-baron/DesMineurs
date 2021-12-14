@@ -1,16 +1,16 @@
 #ifndef UIGAGNE_H
 #define UIGAGNE_H
+#include "Demineur.h"
+#include <QString>
 
-#include"Jeu.h"
-
+class Demineur;
 class UIgagne
 {
-
 private:
-    Jeu * monJeu;
+    Demineur * leDemineur;
 public:
     UIgagne();
-    getUsername();
+    QString getUsername();
 };
 
 #endif // UIGAGNE_H

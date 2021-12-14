@@ -29,4 +29,5 @@ HEADERS  += Mainwindow.h \
     Grille.h \
     Case.h
 
-FORMS    += mainwindow.ui
+FORMS    += \
+    jeu.ui

@@ -1,13 +1,14 @@
 #ifndef JOUEUR_H
 #define JOUEUR_H
 
-#include"Jeu.h"
+#include "Demineur.h"
+
+class Demineur;
 
 class Joueur
 {
-
 private:
-    Jeu * monJeu;
+    Demineur * monDemineur;
 public:
     Joueur();
 };

@@ -36,7 +36,7 @@ Widget::Widget(QWidget *parent) :
     //je récupère un boutton 3, 3 au hazard et je gère le click ! vers une fonction de modif image
     QPushButton *myBtn = this->recuperationQPushButton(3,3);
     QObject::connect(myBtn,
-                     &QPushButton::clicked,  //static_cast<void (QPushButton::*)(bool)>(
+                     &QPushButton::clicked, 
                     this,
                      &Widget::boutonClicked
                      );

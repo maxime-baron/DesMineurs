@@ -1,15 +1,16 @@
 #ifndef GRILLE_H
 #define GRILLE_H
-#include "Demineur.h"
-#include "Case.h"
 
-class Grille
+#include "Case.h"
+#include <QObjectList>
+#include <QGridLayout>
+
+class Grille : public QGridLayout
 {
 private:
-    Case mesCases[4][4];
     int taille;
 public:
-    Grille();
+    Grille(int lgth);
     int numerateur();
     void dynamiteur(int nbrBombe);
 
