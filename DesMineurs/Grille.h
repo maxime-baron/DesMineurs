@@ -13,6 +13,8 @@ public:
     Grille(int lgth);
     int numerateur();
     void dynamiteur(int nbrBombe);
+    void setTaille(int p_taille);
+    int getTaille();
 
 };
 

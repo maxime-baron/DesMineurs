@@ -2,24 +2,23 @@
 #define JEU_H
 
 #include"Jeu.h"
-#include <QMainWindow>
+#include <QtWidgets>
 
-namespace Ui {
+/*namespace Ui {
 class Jeu;
-}
+}*/
 
 class Jeu : public QMainWindow
 {
-    Q_OBJECT
+    public:
+        void win();
+        void lose();
+        /*explicit Jeu(QWidget *parent = 0);*/
+        Jeu();
+        ~Jeu();
 
-public:
-    void win();
-    void lose();
-    explicit Jeu(QWidget *parent = 0);
-    ~Jeu();
-
-private:
-    Ui::Jeu *ui;
-    int topScore;
+    private:
+        /*Ui::Jeu *ui;*/
+        int topScore;
 };
 #endif // JEU_H

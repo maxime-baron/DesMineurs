@@ -1,11 +1,13 @@
-#include "Jeu.h"
 #include <QApplication>
+#include <QApplication>
+#include<QDebug>
+#include "Demineur.h"
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    Jeu w;
-    w.show();
+    QApplication app(argc, argv);
+    Demineur fenetre;
+    fenetre.show();
     
-    return a.exec();
+    return app.exec();
 }
