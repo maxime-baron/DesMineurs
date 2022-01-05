@@ -3,7 +3,8 @@
 
 Jeu::Jeu()
 {
-
+    QWidget *zoneCentrale = new QWidget;
+    setCentralWidget(zoneCentrale);
 }
 
 /*Jeu::Jeu(QWidget *parent) :

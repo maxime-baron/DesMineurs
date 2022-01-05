@@ -1,6 +1,8 @@
 #include "Grille.h"
 #include <cstdlib>
 #include <time.h>
+//#include <QObjectList>
+#include <QLayoutItem>
 #include <QDebug>
 
 Grille::Grille(int lgth):taille(lgth)
@@ -13,14 +15,9 @@ Grille::Grille(int lgth):taille(lgth)
             Case* unBouton = new Case();
             unBouton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
             this->addWidget(unBouton,i,y);
-            //qDebug()<<this->itemAtPosition(i,y)->widget();
-           // qDebug()<<qobject_cast<QPushButton *>(this->itemAtPosition(i,y));
-           //dynamic_cast<QWidgetItem *>(this->itemAtPosition(i,y))->widget()->hide();
-
         }
     }
-    QObjectList maList = this->layout()->itemAtPosition(1,0);
-    qDebug()<<maList;
+    // Dynamiteur
     int nbrBombe = taille*taille/4;
     this->dynamiteur(nbrBombe);
 }
@@ -28,12 +25,18 @@ Grille::Grille(int lgth):taille(lgth)
 void Grille::dynamiteur(int nbrBombe)
 {
     srand(time(NULL));
-    for(int i=0;i<nbrBombe;i++)
+    for(int i=1;i<nbrBombe;i++)
     {
-        int random1 = rand()%1-nbrBombe;
-        int random2 = rand()%1-nbrBombe;
-        qDebug()<<this->itemAtPosition(random1,random2)->widget();
-        /*this->itemAtPosition(random1,random2).setTraped(true);*/
+        int random1 = rand()%taille+0;
+        int random2 = rand()%taille+0;
+
+        QLayoutItem* item = this->layout()->itemAt( (random1) + (random2) * 5); //ici x , y * 4 car on se décalle d'une ligne de 4
+        QWidget* widget = item->widget();
+        Case* button = dynamic_cast<Case*>(widget);
+        button->setTraped(true);
+        QColor col = QColor(Qt::red);
+        QString qss = QString("background-color: %1").arg(col.name());
+        button->setStyleSheet(qss);
     }
 }
 

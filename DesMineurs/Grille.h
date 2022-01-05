@@ -2,7 +2,6 @@
 #define GRILLE_H
 
 #include "Case.h"
-#include <QObjectList>
 #include <QGridLayout>
 
 class Grille : public QGridLayout
