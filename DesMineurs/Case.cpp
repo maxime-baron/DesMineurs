@@ -3,7 +3,7 @@
 
 Case::Case():a_traped(false),a_flaged(false),a_clicked(false),a_valeur(0)
 {
-    this->setStyleSheet("border: 1px solid #DFDFDF;");
+    this->setStyleSheet("border: 1px solid #000;background-color:#fff");//Initialisation du style des cases
 }
 
 bool Case::getTraped()
