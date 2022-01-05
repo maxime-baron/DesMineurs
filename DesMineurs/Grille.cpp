@@ -7,18 +7,20 @@
 
 Grille::Grille(int lgth):taille(lgth)
 {
-    qDebug()<<"Grille";
+    this->setSpacing(0);//Aucun espace entre les widgets
+
+    /* INITIALISATION DES CASES */
     for(int i=0;i<taille;i++)
     {
         for(int y=0;y<taille;y++)
         {
             Case* unBouton = new Case();
-            unBouton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+            unBouton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);//Taille adaptative
             this->addWidget(unBouton,i,y);
         }
     }
-    // Dynamiteur
-    int nbrBombe = taille*taille/4;
+    /* APPELLE DE DYNAMITEEUR */
+    int nbrBombe = taille*taille/4;//Nombre de bombe = nbr de case / 4
     this->dynamiteur(nbrBombe);
 }
 
@@ -27,16 +29,14 @@ void Grille::dynamiteur(int nbrBombe)
     srand(time(NULL));
     for(int i=1;i<nbrBombe;i++)
     {
-        int random1 = rand()%taille+0;
-        int random2 = rand()%taille+0;
+        int random1 = rand()%taille+0;//Nombre aléatoire entre 0 et taille-1
+        int random2 = rand()%taille+0;//Nombre aléatoire entre 0 et taille-1
 
-        QLayoutItem* item = this->layout()->itemAt( (random1) + (random2) * 5); //ici x , y * 4 car on se décalle d'une ligne de 4
-        QWidget* widget = item->widget();
-        Case* button = dynamic_cast<Case*>(widget);
-        button->setTraped(true);
-        QColor col = QColor(Qt::red);
-        QString qss = QString("background-color: %1").arg(col.name());
-        button->setStyleSheet(qss);
+        QLayoutItem* item = this->layout()->itemAt( (random1) + (random2) * taille); //ici x , y * taille car on se décalle d'une ligne en fonction de la taille
+        QWidget* widget = item->widget();//Séléction du widget dans l'item
+        Case* button = dynamic_cast<Case*>(widget);//Cast du widget en ça classe enfant "Case"
+        button->setTraped(true);//Ajt d'une bombe sur la case
+        button->setStyleSheet("background-color: red");//Colore les bombes en rouges (pour le débbug)
     }
 }
 

@@ -8,7 +8,8 @@ Demineur::Demineur()
 {
     QWidget *zoneCentrale = new QWidget;
 
-    Grille *maGrille = new Grille(5);
+    Grille *maGrille = new Grille(10);
+    this->setFixedSize(800,800);
 
     zoneCentrale->setLayout(maGrille);
 

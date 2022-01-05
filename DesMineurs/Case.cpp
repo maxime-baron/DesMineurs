@@ -1,7 +1,10 @@
 #include "Case.h"
 #include <cstdlib>
 
-Case::Case():a_traped(false),a_flaged(false),a_clicked(false),a_valeur(0){}
+Case::Case():a_traped(false),a_flaged(false),a_clicked(false),a_valeur(0)
+{
+    this->setStyleSheet("border: 1px solid #DFDFDF;");
+}
 
 bool Case::getTraped()
 {
