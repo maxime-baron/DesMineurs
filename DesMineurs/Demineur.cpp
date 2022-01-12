@@ -9,13 +9,12 @@ Demineur::Demineur()
     QWidget *zoneCentrale = new QWidget;
 
     Grille *maGrille = new Grille(10);
-    this->setFixedSize(800,800);
+    this->setFixedSize(600,600);
 
     zoneCentrale->setLayout(maGrille);
 
     setCentralWidget(zoneCentrale);
 
-    maGrille = new Grille(5);
     int taille= maGrille->getTaille();
     qDebug()<<"Demineur";
 }

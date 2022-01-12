@@ -9,10 +9,14 @@ private:
     bool a_traped;
     bool a_flaged;
     bool a_clicked;
+
 protected:
-    int a_valeur;
+
 public:
-    Case();
+    int a_valeur;
+    int a_posL;
+    int a_posC;
+    Case(int posL,int posC);
     void setValeur(int p_valeur);
     int getValeur();
     void setTraped(bool p_traped);

@@ -13,7 +13,6 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        Mainwindow.cpp \
     Jeu.cpp \
     UIgagne.cpp \
     Joueur.cpp \
@@ -21,7 +20,7 @@ SOURCES += main.cpp\
     Grille.cpp \
     Case.cpp
 
-HEADERS  += Mainwindow.h \
+HEADERS  += \
     Jeu.h \
     Demineur.h \
     Joueur.h \
