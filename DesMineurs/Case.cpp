@@ -18,3 +18,9 @@ void Case::setTraped(bool p_traped)
 {
     a_traped = p_traped;
 }
+
+void Case::mouseReleaseEvent(QMouseEvent *e) {
+        if (e->button() == Qt::RightButton) emit rightClicked();
+        else if (e->button() == Qt::LeftButton) emit clicked();
+    }
+
