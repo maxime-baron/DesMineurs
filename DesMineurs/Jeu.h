@@ -10,10 +10,10 @@ class Jeu;
 
 class Jeu : public QMainWindow
 {
-    public:
-        void win();
-        void lose();
-        /*explicit Jeu(QWidget *parent = 0);*/
+protected slots:
+    void win();
+    void lose();
+public:
         Jeu();
         ~Jeu();
 

@@ -30,3 +30,6 @@ HEADERS  += \
 
 FORMS    += \
     jeu.ui
+
+RESOURCES += \
+    Images.qrc

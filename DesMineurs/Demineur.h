@@ -12,6 +12,9 @@ class Grille;
 
 class Demineur:public Jeu
 {
+protected slots:
+    void win();
+    void lose();
 private:
     Grille * maGrille;
     Joueur * monJoueur;

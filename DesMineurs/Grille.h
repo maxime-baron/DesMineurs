@@ -3,7 +3,7 @@
 
 #include "Case.h"
 #include <QGridLayout>
-
+#include <QObject>
 
 class Grille : public QGridLayout
 {
@@ -12,6 +12,10 @@ class Grille : public QGridLayout
 
 private:
     int taille;
+    void verifWin();
+    void digitClicked(Case* cs,bool right);
+     ~Grille();
+
 public:
 
     Case* caseClick;
@@ -23,7 +27,8 @@ public:
     int getTaille();
     Case * recuperationCase(int p_x,int p_y);
 signals:
-    void digitClicked(Case* cs,bool right);
+    void lose();
+    void win();
 
 private slots:
     void bouttonCliquer();
