@@ -1,7 +1,6 @@
 #include "Grille.h"
 #include <cstdlib>
 #include <time.h>
-//#include <QObjectList>
 #include <QLayoutItem>
 #include <QDebug>
 #include <Case.h>
@@ -24,7 +23,7 @@ Grille::Grille(int lgth):taille(lgth)
         }
     }
     /* APPELLE DE DYNAMITEEUR */
-    int nbrBombe = taille*taille*0.25;
+    int nbrBombe = taille*taille*0.2;
     this->dynamiteur(nbrBombe);
     this->numerateur();
 }
@@ -106,17 +105,6 @@ void  Grille::numerateur()
             }
         }
     }
-//    for(int i=0;i<taille;i++)
-//    {
-//        for(int y=0;y<taille;y++)
-//        {
-//            QLayoutItem* item = this->layout()->itemAt( (i) + (y) * taille); //ici x , y * taille car on se décalle d'une ligne en fonction de la taille
-//            QWidget* widget = item->widget();//Séléction du widget dans l'item
-//            Case* button = dynamic_cast<Case*>(widget);//Cast du widget en ça classe enfant "Case"
-
-//            button->setText(QString::number(button->a_valeur));
-//        }
-//    }
 }
 
 void Grille::setTaille(int p_taille)
@@ -131,10 +119,7 @@ int Grille::getTaille()
 
 void Grille::bouttonCliquer()
 {
-    qDebug()<<"test";
     Case *buttoon = qobject_cast<Case*>(sender());
-    //buttoon->setValeur(3);
-    //qDebug()<<"valeur boutton"<<buttoon->getValeur();
     digitClicked(buttoon,false);
 }
 
@@ -145,10 +130,6 @@ void Grille::onRightClicked()
     if (!button){ // si appelé par autre chose qu'un bouton on jette !
         return; // not called from button
     }
-
-    qDebug()<< "Quel bouton ? :"<< button->text();
-    //button->setText("Clicked");
-    //qDebug()<<"valeur boutton"<<buttoon->getValeur();
     digitClicked(button,true);
 }
 
@@ -156,27 +137,27 @@ void Grille::onRightClicked()
 void Grille::digitClicked(Case* cs,bool rgt)
 {
     verifWin();
-    qDebug()<<"digit clicked bien recu ";
-
-    if(cs->getTraped()==false and rgt==false){
-        cs->setStyleSheet("border: 1px solid #000;background-color:#c3c3c3");
-        cs->setText(QString::number(cs->a_valeur));
-        QFont font =cs->font();
-        font.setPointSize(cs->width()/2);
-        cs->setFont(font);
-        cs->setClicked(true);
-    }else if(cs->getTraped()==true and rgt==false)
+    if(cs->getFlaged()!=true && cs->getClicked()!=true)
     {
-        emit lose();
-        this->~Grille();
-    }else if(rgt==true)
-    {
-        qDebug()<<"Click Droit";
-        cs->setFlaged(true);
-        cs->setIcon(QIcon(":qrc:/../flag.png"));
-        cs->setIconSize(QSize(cs->width()/1.1,cs->height()/1.1));
+        if(cs->getTraped()==false and rgt==false){
+            cs->setStyleSheet("border: 1px solid #000;background-color:#c3c3c3");
+            cs->setText(QString::number(cs->a_valeur));
+            QFont font =cs->font();
+            font.setPointSize(cs->width()/2);
+            cs->setFont(font);
+            cs->setClicked(true);
+        }else if(cs->getTraped()==true and rgt==false)
+        {
+            emit lose();
+            this->~Grille();
+        }else if(rgt==true)
+        {
+            qDebug()<<"Click Droit";
+            cs->setFlaged(true);
+            cs->setIcon(QIcon(":qrc:/../flag.png"));
+            cs->setIconSize(QSize(cs->width()/1.1,cs->height()/1.1));
+        }
     }
-
 }
 
 Grille::~Grille(){}
@@ -196,18 +177,12 @@ void Grille::verifWin()
 
             if(btn->getTraped()==true and btn->getFlaged()==true)
             {
-//                qDebug()<<"bombFlag";
                 bombFlag++;
             }
             if(btn->getTraped()==false and btn->getClicked()==true)
             {
-//                qDebug()<<"Case";
                 caseTrouver++;
             }
-
-//            qDebug()<<"Case Trouver:"<<caseTrouver;
-//            qDebug()<<"Bombe Trouver:"<<bombFlag;
-//            qDebug()<<"Total:"<<bombFlag+caseTrouver;
 
             if(caseTrouver+bombFlag == taille*taille-1)
             {

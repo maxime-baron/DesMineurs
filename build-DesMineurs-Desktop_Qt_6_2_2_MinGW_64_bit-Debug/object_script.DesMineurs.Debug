@@ -1,0 +1,10 @@
+debug/main.o
+debug/Jeu.o
+debug/UIgagne.o
+debug/Joueur.o
+debug/Demineur.o
+debug/Grille.o
+debug/Case.o
+debug/qrc_Images.o
+debug/moc_Grille.o
+debug/moc_Case.o
